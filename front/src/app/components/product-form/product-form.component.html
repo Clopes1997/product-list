@@ -1,0 +1,24 @@
+<div class="product-form">
+    <h2>{{ isEdit ? 'Edit' : 'Create' }} Product</h2>
+    <form (ngSubmit)="saveProduct()" #productForm="ngForm">
+      <label>Name:
+        <input type="text" name="name" [(ngModel)]="product.name" required />
+      </label>
+      <label>Description:
+        <input type="text" name="description" [(ngModel)]="product.description" required />
+      </label>
+      <label>Category:
+        <input type="text" name="category" [(ngModel)]="product.categoryPath" required />
+      </label>      
+      <label>Price:
+        <input type="number" name="price" [(ngModel)]="product.price" required />
+      </label>
+      <label>Available:
+        <input type="checkbox" name="available" [(ngModel)]="product.available" />
+      </label>
+      <button type="submit" [disabled]="!productForm.form.valid">
+        {{ isEdit ? 'Update' : 'Create' }}
+      </button>
+    </form>
+  </div>
+  

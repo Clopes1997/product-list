@@ -1,0 +1,21 @@
+.product-form {
+    padding: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    padding: 5px;
+    width: 300px;
+    margin-top: 5px;
+    display: block;
+  }
+  
+  button {
+    margin-top: 15px;
+    padding: 8px 16px;
+  }
+  

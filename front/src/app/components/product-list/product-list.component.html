@@ -1,0 +1,34 @@
+<div class="product-list">
+    <h2>Product List</h2>
+    <input [(ngModel)]="filterName" placeholder="Search by name">
+<select [(ngModel)]="sortBy" hidden>
+  <option value="name">Name</option>
+</select>
+<button (click)="applyFilters()">Apply</button>
+
+    <button (click)="createProduct()">Add Product</button>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>Description</th><th>Price</th><th>Category</th><th>Available</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price | currency }}</td>
+          <td>{{ product.categoryPath }}</td>
+          <td [style.color]="product.available ? 'green' : 'red'">
+            {{ product.available ? '✔' : '✘' }}
+          </td>          
+          <td>
+            <button (click)="editProduct(product.id!)">Edit</button>
+            <button (click)="deleteProduct(product.id!)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
